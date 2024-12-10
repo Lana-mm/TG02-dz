@@ -8,10 +8,10 @@ import sqlite3
 import logging
 
 
-API_TOKEN = '7635278323:AAFC74i3wULah_Yv25EN-me8MYsO3KVJL-A'
+from config import TOKEN
 
 
-bot = Bot(token=API_TOKEN)
+bot = Bot(token=TOKEN)
 dp = Dispatcher()
 logging.basicConfig(level=logging.INFO)
 

@@ -5,17 +5,19 @@ from aiogram.types import Message
 from aiogram import F
 from googletrans import Translator
 
-API_TOKEN = '7635278323:AAFC74i3wULah_Yv25EN-me8MYsO3KVJL-A'
+from config import TOKEN
+import keyboards as kb
+
 translator = Translator()
 
 # Инициализация бота и диспетчера
-bot = Bot(token=API_TOKEN)
+bot = Bot(token=TOKEN)
 dp = Dispatcher()
 
 # Приветствие /start
 @dp.message(Command(commands=['start']))
 async def send_welcome(message: Message):
-    await message.answer("Приветики, я ваш бот.")
+    await message.answer(f"Приветики, я ваш бот", reply_markup=kb.inline_keyboard_test)
 
 # Сохранинеи фотографий в папку img
 @dp.message(F.photo)
